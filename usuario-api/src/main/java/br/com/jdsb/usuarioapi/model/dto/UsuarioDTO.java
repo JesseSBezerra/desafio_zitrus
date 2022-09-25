@@ -1,4 +1,4 @@
-package br.com.jdsb.usuarioapi.domain.dto;
+package br.com.jdsb.usuarioapi.model.dto;
 
 
 import lombok.AllArgsConstructor;

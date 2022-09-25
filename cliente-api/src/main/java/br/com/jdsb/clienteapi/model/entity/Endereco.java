@@ -1,24 +1,30 @@
-package br.com.jdsb.usuarioapi.domain.entity;
+package com.example.salesapi.domain.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "usuario")
-public class Usuario {
-
+@Entity(name = "ENDERECO")
+public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String login;
-    private String senha;
-    private boolean adimin;
+
+    private String logradouro;
+    private String complemento;
+    private String cep;
+    private String bairro;
+    private String localidade;
+    private String uf;
+
 }
