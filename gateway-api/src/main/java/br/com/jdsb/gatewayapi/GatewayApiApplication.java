@@ -1,4 +1,4 @@
-package br.com.jdsb.clienteapi;
+package br.com.jdsb.gatewayapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class ClienteApiApplication {
+public class GatewayApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ClienteApiApplication.class, args);
+        SpringApplication.run(GatewayApiApplication.class, args);
     }
 
 }
