@@ -15,8 +15,8 @@ public interface ClienteResource {
     @GetMapping("/{id}")
     ResponseEntity<ClienteDTO> findById(@PathVariable Long id);
 
-    @GetMapping("/{cpf}")
-    ResponseEntity<ClienteDTO> findById(@PathVariable String cpf);
+    @GetMapping("/cpf/{cpf}")
+    ResponseEntity<ClienteDTO> findByCpf(@PathVariable String cpf);
 
     @GetMapping
     ResponseEntity<List<ClienteDTO>> findAll();

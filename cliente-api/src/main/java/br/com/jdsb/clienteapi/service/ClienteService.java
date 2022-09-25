@@ -12,7 +12,7 @@ public interface ClienteService {
     public Cliente findByCpf(String cpf);
     public List<Cliente> findAll();
     public Cliente update(ClienteDTO clienteDTO);
-    public void detele(Long id);
+    public void delete(Long id);
 
 
 }
