@@ -1,7 +1,7 @@
 package br.com.jdsb.usuarioapi.service;
 
-import br.com.jdsb.usuarioapi.domain.dto.UsuarioDTO;
-import br.com.jdsb.usuarioapi.domain.entity.Usuario;
+import br.com.jdsb.usuarioapi.model.dto.UsuarioDTO;
+import br.com.jdsb.usuarioapi.model.entity.Usuario;
 
 import java.util.List;
 

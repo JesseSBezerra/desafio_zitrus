@@ -1,6 +1,6 @@
 package br.com.jdsb.usuarioapi.resource.impl;
 
-import br.com.jdsb.usuarioapi.domain.dto.UsuarioDTO;
+import br.com.jdsb.usuarioapi.model.dto.UsuarioDTO;
 import br.com.jdsb.usuarioapi.resource.UsuarioResource;
 import br.com.jdsb.usuarioapi.service.UsuarioService;
 import lombok.RequiredArgsConstructor;

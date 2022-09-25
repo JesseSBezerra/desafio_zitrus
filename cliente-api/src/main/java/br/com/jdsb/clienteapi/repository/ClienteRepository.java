@@ -1,6 +1,6 @@
-package com.example.salesapi.repositories;
+package br.com.jdsb.clienteapi.repository;
 
-import com.example.salesapi.domain.entity.Cliente;
+import br.com.jdsb.clienteapi.model.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

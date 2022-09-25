@@ -1,6 +1,6 @@
 package br.com.jdsb.usuarioapi.resource;
 
-import br.com.jdsb.usuarioapi.domain.dto.UsuarioDTO;
+import br.com.jdsb.usuarioapi.model.dto.UsuarioDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

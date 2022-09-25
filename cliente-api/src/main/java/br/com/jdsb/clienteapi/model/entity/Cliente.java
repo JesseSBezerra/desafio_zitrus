@@ -1,4 +1,4 @@
-package com.example.salesapi.domain.entity;
+package br.com.jdsb.clienteapi.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +23,7 @@ public class Cliente {
     private String cpf;
     private LocalDate dataNascimento;
     @OneToOne
-    @JoinColumn(name = "endereco_cep")
+    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
 }

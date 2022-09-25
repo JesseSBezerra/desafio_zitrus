@@ -1,19 +1,18 @@
-package com.example.salesapi.services;
+package br.com.jdsb.clienteapi.service;
 
-import com.example.salesapi.domain.dto.ClienteDTO;
-import com.example.salesapi.domain.entity.Cliente;
+import br.com.jdsb.clienteapi.model.dto.ClienteDTO;
+import br.com.jdsb.clienteapi.model.entity.Cliente;
 
 import java.util.List;
 
 public interface ClienteService {
 
-    Cliente findById(Long id);
-    ClienteDTO create(ClienteDTO dto);
-    ClienteDTO findByCpf(String cpf);
-    List<ClienteDTO> findAll();
-    ClienteDTO update(Long id,ClienteDTO clienteDTO);
-
-    ClienteDTO detele(Long id);
+    public Cliente findById(Long id);
+    public Cliente create(ClienteDTO dto);
+    public Cliente findByCpf(String cpf);
+    public List<Cliente> findAll();
+    public Cliente update(ClienteDTO clienteDTO);
+    public void detele(Long id);
 
 
 }

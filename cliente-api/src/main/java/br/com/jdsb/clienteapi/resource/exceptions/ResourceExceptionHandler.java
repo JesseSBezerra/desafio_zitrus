@@ -1,7 +1,8 @@
-package com.example.salesapi.resources.exceptions;
+package br.com.jdsb.clienteapi.resource.exceptions;
 
-import com.example.salesapi.services.exceptions.ClienteJaCadastradoException;
-import com.example.salesapi.services.exceptions.ClienteNaoEncontradoException;
+
+import br.com.jdsb.clienteapi.service.exceptions.ClienteJaCadastradoException;
+import br.com.jdsb.clienteapi.service.exceptions.ClienteNaoEncontradoException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

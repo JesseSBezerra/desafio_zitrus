@@ -1,6 +1,6 @@
 package br.com.jdsb.usuarioapi.repository;
 
-import br.com.jdsb.usuarioapi.domain.entity.Usuario;
+import br.com.jdsb.usuarioapi.model.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

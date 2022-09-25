@@ -1,4 +1,4 @@
-package com.example.salesapi.resources.exceptions;
+package br.com.jdsb.clienteapi.resource.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

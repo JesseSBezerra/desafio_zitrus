@@ -1,4 +1,4 @@
-package br.com.jdsb.usuarioapi.config;
+package br.com.jdsb.clienteapi.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

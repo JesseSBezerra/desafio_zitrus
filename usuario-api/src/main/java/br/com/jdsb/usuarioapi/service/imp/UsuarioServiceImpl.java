@@ -1,7 +1,7 @@
 package br.com.jdsb.usuarioapi.service.imp;
 
-import br.com.jdsb.usuarioapi.domain.dto.UsuarioDTO;
-import br.com.jdsb.usuarioapi.domain.entity.Usuario;
+import br.com.jdsb.usuarioapi.model.dto.UsuarioDTO;
+import br.com.jdsb.usuarioapi.model.entity.Usuario;
 import br.com.jdsb.usuarioapi.repository.UsuarioRepository;
 import br.com.jdsb.usuarioapi.service.UsuarioService;
 import br.com.jdsb.usuarioapi.service.exceptions.UsuarioJaCadastradoException;
