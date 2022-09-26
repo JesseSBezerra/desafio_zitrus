@@ -6,22 +6,23 @@ import br.com.jdsb.usuarioapi.repository.UsuarioRepository;
 import br.com.jdsb.usuarioapi.service.UsuarioService;
 import br.com.jdsb.usuarioapi.service.exceptions.UsuarioJaCadastradoException;
 import br.com.jdsb.usuarioapi.service.exceptions.UsuarioNaoEncontradoException;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
-    private final UsuarioRepository repository;
-    private final PasswordEncoder encoder;
-
-    private final ModelMapper mapper;
+    @Autowired
+    private  UsuarioRepository repository;
+    @Autowired
+    private  PasswordEncoder encoder;
+    @Autowired
+    private ModelMapper mapper;
 
     @Override
     public Usuario findByLogin(String login) {
@@ -30,7 +31,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario findById(Long id) {
-        return repository.findById(id).orElseThrow(()-> new UsuarioNaoEncontradoException(USUARIO_NAO_ENCONTRADO));
+        Optional<Usuario> obj = repository.findById(id);
+        return obj.orElseThrow(()-> new UsuarioNaoEncontradoException(USUARIO_NAO_ENCONTRADO));
     }
 
     @Override

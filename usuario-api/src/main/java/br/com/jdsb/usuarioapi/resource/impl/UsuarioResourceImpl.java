@@ -3,8 +3,8 @@ package br.com.jdsb.usuarioapi.resource.impl;
 import br.com.jdsb.usuarioapi.model.dto.UsuarioDTO;
 import br.com.jdsb.usuarioapi.resource.UsuarioResource;
 import br.com.jdsb.usuarioapi.service.UsuarioService;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -14,11 +14,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequiredArgsConstructor
 public class UsuarioResourceImpl implements UsuarioResource {
 
-    private final ModelMapper mapper;
-    private final UsuarioService service;
+    @Autowired
+    private  ModelMapper mapper;
+    @Autowired
+    private  UsuarioService service;
 
     @Override
     public ResponseEntity<UsuarioDTO> create(UsuarioDTO dto) {
@@ -29,7 +30,8 @@ public class UsuarioResourceImpl implements UsuarioResource {
 
     @Override
     public ResponseEntity<UsuarioDTO> findById(Long id) {
-        return ResponseEntity.ok().body(mapper.map(service.findById(id),UsuarioDTO.class));
+        UsuarioDTO obj = mapper.map(service.findById(id),UsuarioDTO.class);
+        return ResponseEntity.ok().body(obj);
     }
 
     @Override

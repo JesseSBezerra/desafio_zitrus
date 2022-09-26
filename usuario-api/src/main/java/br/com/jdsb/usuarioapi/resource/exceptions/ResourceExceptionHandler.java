@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class ResourceExceptionHandler {
     @ExceptionHandler(UsuarioNaoEncontradoException.class)
-    public ResponseEntity<StandardError> objectNotFound(UsuarioNaoEncontradoException ex, HttpServletRequest request){
+    public ResponseEntity<StandardError> usuarioNaoEncontrado(UsuarioNaoEncontradoException ex, HttpServletRequest request){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
                 new StandardError(LocalDateTime.now(),
                         ex.getMessage(),
@@ -23,11 +23,11 @@ public class ResourceExceptionHandler {
     }
 
     @ExceptionHandler(UsuarioJaCadastradoException.class)
-    public ResponseEntity<StandardError> objectNotFound(UsuarioJaCadastradoException ex, HttpServletRequest request){
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+    public ResponseEntity<StandardError> usuarioJaCadastrado(UsuarioJaCadastradoException ex, HttpServletRequest request){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                 new StandardError(LocalDateTime.now(),
                         ex.getMessage(),
-                        HttpStatus.NOT_FOUND.value(),
+                        HttpStatus.BAD_REQUEST.value(),
                         request.getRequestURI())
         );
     }
