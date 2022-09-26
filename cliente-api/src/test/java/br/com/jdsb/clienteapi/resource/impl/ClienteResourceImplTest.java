@@ -34,6 +34,7 @@ class ClienteResourceImplTest {
     private final String NOME = "Jessé";
     private final String EMAIL = "jessebezerra@hotmail.com.br";
     private final String CPF = "36558737000";
+    private final String TELEFONE = "81997088404";
     private final LocalDate DATA_NASCIMENTO = LocalDate.of(2022,4,9);
 
     private final String LOGRADOURO = "Rua Mariano Manoel da Silva";
@@ -175,7 +176,7 @@ class ClienteResourceImplTest {
     }
 
     private void startCliente() {
-        cliente = new Cliente(ID,NOME,EMAIL,CPF,DATA_NASCIMENTO,endereco);
-        clienteDTO = new ClienteDTO(ID,NOME,EMAIL,DATA_NASCIMENTO,CPF,new EnderecoDTO(ID,LOGRADOURO,COMPLEMENTO,CEP,BAIRRO,LOCALIDADE,UF));
+        cliente = new Cliente(ID,NOME,EMAIL,CPF,DATA_NASCIMENTO,TELEFONE,endereco);
+        clienteDTO = new ClienteDTO(ID,NOME,EMAIL,DATA_NASCIMENTO,CPF,TELEFONE,new EnderecoDTO(ID,LOGRADOURO,COMPLEMENTO,CEP,BAIRRO,LOCALIDADE,UF));
     }
 }

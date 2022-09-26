@@ -16,5 +16,6 @@ public class ClienteDTO {
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
     private LocalDate dataNascimento;
     private String cpf;
+    private String telefone;
     private EnderecoDTO endereco;
 }

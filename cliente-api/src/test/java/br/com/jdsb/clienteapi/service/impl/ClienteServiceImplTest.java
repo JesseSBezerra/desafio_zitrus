@@ -40,6 +40,7 @@ class ClienteServiceImplTest {
     private final String BAIRRO = "Centro";
     private final String LOCALIDADE = "Toritama";
     private final String UF = "PE";
+    private final String TELEFONE = "81997088404";
 
     private final Endereco endereco = new Endereco(ID,LOGRADOURO,COMPLEMENTO,CEP,BAIRRO,LOCALIDADE,UF);
 
@@ -211,8 +212,8 @@ class ClienteServiceImplTest {
     }
 
     private void startCliente() {
-        cliente = new Cliente(ID,NOME,EMAIL,CPF,DATA_NASCIMENTO,endereco);
-        clienteDTO = new ClienteDTO(ID,NOME,EMAIL,DATA_NASCIMENTO,CPF,new EnderecoDTO(ID,LOGRADOURO,COMPLEMENTO,CEP,BAIRRO,LOCALIDADE,UF));
+        cliente = new Cliente(ID,NOME,EMAIL,CPF,DATA_NASCIMENTO,TELEFONE,endereco);
+        clienteDTO = new ClienteDTO(ID,NOME,EMAIL,DATA_NASCIMENTO,CPF,TELEFONE,new EnderecoDTO(ID,LOGRADOURO,COMPLEMENTO,CEP,BAIRRO,LOCALIDADE,UF));
         optionalCliente = Optional.of(cliente);
     }
 }

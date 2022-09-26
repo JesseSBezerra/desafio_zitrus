@@ -22,7 +22,8 @@ public class Cliente {
     private String email;
     private String cpf;
     private LocalDate dataNascimento;
-    @OneToOne
+    private String telefone;
+    @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 

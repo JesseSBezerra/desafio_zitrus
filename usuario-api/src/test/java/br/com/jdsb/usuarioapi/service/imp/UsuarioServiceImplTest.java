@@ -150,14 +150,13 @@ class UsuarioServiceImplTest {
         assertNotNull(response);
         assertEquals(Usuario.class, response.getClass());
         assertEquals(ID, response.getId());
-        assertEquals(ID, response.getId());
         assertEquals(LOGIN, response.getLogin());
         assertEquals(SENHA, response.getSenha());
         assertEquals(ADMIN, response.isAdimin());
     }
 
     @Test
-    void whenUpdateThenReturnAnDataIntegrityViolationException() {
+    void whenUpdateThenReturnAnUsuarioJaCadastradoException() {
         when(repository.findByLogin(anyString())).thenReturn(optionalUsuario);
 
         try{
