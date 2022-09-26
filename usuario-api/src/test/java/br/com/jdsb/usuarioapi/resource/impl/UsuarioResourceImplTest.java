@@ -78,6 +78,24 @@ class UsuarioResourceImplTest {
         assertEquals(ADMIN, response.getBody().isAdimin());
     }
 
+    @Test
+    void whenFindByLoginThenReturnSuccess() {
+        when(service.findByLogin(anyString())).thenReturn(usuario);
+        when(mapper.map(any(), any())).thenReturn(usuarioDTO);
+
+        ResponseEntity<UsuarioDTO> response = resource.findById(ID);
+
+        assertNotNull(response);
+        assertNotNull(response.getBody());
+        assertEquals(ResponseEntity.class, response.getClass());
+        assertEquals(UsuarioDTO.class, response.getBody().getClass());
+
+        assertEquals(ID, response.getBody().getId());
+        assertEquals(LOGIN, response.getBody().getLogin());
+        assertEquals(SENHA, response.getBody().getSenha());
+        assertEquals(ADMIN, response.getBody().isAdimin());
+    }
+
 
     @Test
     void whenFindAllThenReturnAListOfUsuarioDTO() {

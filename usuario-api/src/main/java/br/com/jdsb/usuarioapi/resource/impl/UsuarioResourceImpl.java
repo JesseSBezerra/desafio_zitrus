@@ -35,6 +35,11 @@ public class UsuarioResourceImpl implements UsuarioResource {
     }
 
     @Override
+    public ResponseEntity<UsuarioDTO> findByLogin(String login) {
+        return ResponseEntity.ok().body(mapper.map(service.findByLogin(login),UsuarioDTO.class));
+    }
+
+    @Override
     public ResponseEntity<List<UsuarioDTO>> findAll() {
         return ResponseEntity.ok().body(service.findAll()
                 .stream().map(x -> mapper.map(x,UsuarioDTO.class)).collect(Collectors.toList()));

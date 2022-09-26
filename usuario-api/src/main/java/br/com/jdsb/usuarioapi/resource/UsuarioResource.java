@@ -15,6 +15,9 @@ public interface UsuarioResource {
     @GetMapping("/{id}")
     ResponseEntity<UsuarioDTO> findById(@PathVariable Long id);
 
+    @GetMapping("/login/{login}")
+    ResponseEntity<UsuarioDTO> findByLogin(@PathVariable String login);
+
     @GetMapping
     ResponseEntity<List<UsuarioDTO>> findAll();
 

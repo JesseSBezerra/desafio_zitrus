@@ -18,7 +18,7 @@ public class InsertConfigure {
     public void insereUsuarioPadrao(){
         Usuario usuario = new Usuario();
         usuario.setLogin("zitrino");
-        usuario.setSenha(encoder.encode("“venhaserfeliz"));
+        usuario.setSenha(encoder.encode("venhaserfeliz"));
         usuario.setAdimin(true);
 
         if(repository.findByLogin(usuario.getLogin()).isEmpty()){
