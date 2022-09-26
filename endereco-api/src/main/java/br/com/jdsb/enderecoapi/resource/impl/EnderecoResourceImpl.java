@@ -3,28 +3,25 @@ package br.com.jdsb.enderecoapi.resource.impl;
 import br.com.jdsb.enderecoapi.model.dto.EnderecoDTO;
 import br.com.jdsb.enderecoapi.resource.EnderecoResource;
 import br.com.jdsb.enderecoapi.service.EnderecoService;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequiredArgsConstructor
 public class EnderecoResourceImpl implements EnderecoResource {
 
-    private final ModelMapper mapper;
-    private final EnderecoService service;
+    @Autowired
+    private ModelMapper mapper;
+    @Autowired
+    private EnderecoService service;
 
     @Override
     public ResponseEntity<EnderecoDTO> create(EnderecoDTO dto) {
-        URI uri = ServletUriComponentsBuilder.
-                fromCurrentRequestUri().path("/{id}").buildAndExpand(service.create(dto).getId()).toUri();
-        return ResponseEntity.created(uri).build();
+        return ResponseEntity.ok().body(mapper.map(service.create(dto),EnderecoDTO.class));
     }
 
     @Override

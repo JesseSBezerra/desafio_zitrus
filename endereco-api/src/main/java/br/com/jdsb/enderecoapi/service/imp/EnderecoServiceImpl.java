@@ -5,18 +5,19 @@ import br.com.jdsb.enderecoapi.model.entity.Endereco;
 import br.com.jdsb.enderecoapi.repository.EnderecoRepository;
 import br.com.jdsb.enderecoapi.service.EnderecoService;
 import br.com.jdsb.enderecoapi.service.exceptions.EnderecoNaoEncontradoException;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @Service
 public class EnderecoServiceImpl implements EnderecoService {
 
-    private final EnderecoRepository repository;
-    private final ModelMapper mapper;
+    @Autowired
+    private EnderecoRepository repository;
+    @Autowired
+    private ModelMapper mapper;
 
     @Override
     public Endereco findById(Long id) {
