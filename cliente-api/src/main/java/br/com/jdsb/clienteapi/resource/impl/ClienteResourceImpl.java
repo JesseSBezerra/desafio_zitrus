@@ -3,8 +3,8 @@ package br.com.jdsb.clienteapi.resource.impl;
 import br.com.jdsb.clienteapi.model.dto.ClienteDTO;
 import br.com.jdsb.clienteapi.resource.ClienteResource;
 import br.com.jdsb.clienteapi.service.ClienteService;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -14,11 +14,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequiredArgsConstructor
 public class ClienteResourceImpl implements ClienteResource {
 
-    private final ModelMapper mapper;
-    private final ClienteService service;
+    @Autowired
+    private ModelMapper mapper;
+    @Autowired
+    private ClienteService service;
 
     @Override
     public ResponseEntity<ClienteDTO> create(ClienteDTO dto) {

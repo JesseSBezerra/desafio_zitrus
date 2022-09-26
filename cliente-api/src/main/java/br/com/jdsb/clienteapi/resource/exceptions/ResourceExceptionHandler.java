@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class ResourceExceptionHandler {
     @ExceptionHandler(ClienteNaoEncontradoException.class)
-    public ResponseEntity<StandardError> objectNotFound(ClienteNaoEncontradoException ex, HttpServletRequest request){
+    public ResponseEntity<StandardError> clienteNaoEncontrado(ClienteNaoEncontradoException ex, HttpServletRequest request){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
                 new StandardError(LocalDateTime.now(),
                         ex.getMessage(),
@@ -24,11 +24,11 @@ public class ResourceExceptionHandler {
     }
 
     @ExceptionHandler(ClienteJaCadastradoException.class)
-    public ResponseEntity<StandardError> objectNotFound(ClienteJaCadastradoException ex, HttpServletRequest request){
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
+    public ResponseEntity<StandardError> clienteJaCadastrado(ClienteJaCadastradoException ex, HttpServletRequest request){
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                 new StandardError(LocalDateTime.now(),
                         ex.getMessage(),
-                        HttpStatus.NOT_FOUND.value(),
+                        HttpStatus.BAD_REQUEST.value(),
                         request.getRequestURI())
         );
     }

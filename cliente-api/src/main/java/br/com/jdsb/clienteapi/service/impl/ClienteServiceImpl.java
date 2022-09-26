@@ -6,18 +6,19 @@ import br.com.jdsb.clienteapi.repository.ClienteRepository;
 import br.com.jdsb.clienteapi.service.ClienteService;
 import br.com.jdsb.clienteapi.service.exceptions.ClienteJaCadastradoException;
 import br.com.jdsb.clienteapi.service.exceptions.ClienteNaoEncontradoException;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @Service
 public class ClienteServiceImpl implements ClienteService {
 
-    private final ClienteRepository repository;
-    private final ModelMapper mapper;
+    @Autowired
+    private ClienteRepository repository;
+    @Autowired
+    private ModelMapper mapper;
 
     @Override
     public Cliente findById(Long id) {
