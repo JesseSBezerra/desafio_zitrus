@@ -1,4 +1,4 @@
-### desafio_zitrus
+# Desafio Zitrus
 Desafio Tecnológico Zitrus
 <div align="center">
 
@@ -49,7 +49,10 @@ Desafio Tecnológico Zitrus
   <li> A aplicação roda na porta 8300
   <li> Como solicitado deixei exposta a api de consulta de clientes e endereços, esta roda na seguinte url : http://localhost:8300/api/cliente  
 </br>
-<b>EndPoints</b>
+<li> Endpoints: </li>
+O arquivo contendo todos as chamadas realizadas no postaman se encontra em 
+https://github.com/JesseSBezerra/desafio_zitrus/blob/master/desafio_zitrus.postman_collection.json
+OBS: para funcionar corretamente será necessário expor as portas no docker-compose
 
 Obs: Após o start do projeto no docker compose demora uns 2 ou 3 minutos para conseguir logar na aplicação
 #
