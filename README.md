@@ -52,7 +52,7 @@ Desafio Tecnológico Zitrus
 <li> Endpoints: </li>
 O arquivo contendo todos as chamadas realizadas no postaman se encontra em 
 https://github.com/JesseSBezerra/desafio_zitrus/blob/master/desafio_zitrus.postman_collection.json
-OBS: para funcionar corretamente será necessário expor as portas no docker-compose
+<p> OBS: para funcionar corretamente será necessário expor as portas no docker-compose </p>
 
 Obs: Após o start do projeto no docker compose demora uns 2 ou 3 minutos para conseguir logar na aplicação
 #
