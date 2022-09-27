@@ -44,6 +44,7 @@ Desafio Tecnológico Zitrus
 <li> Caelum Stella
 <li> CSS
 <li> HTML
+#
 #### Endpoints
   OBS: Deixei as portas das apis de usuário,endereco,cliente, eureka e api-gateway ocultas no docker compose apenas deixando a aplicação cadastro de clientes exposta.
   <li> A aplicação roda na porta 8300
