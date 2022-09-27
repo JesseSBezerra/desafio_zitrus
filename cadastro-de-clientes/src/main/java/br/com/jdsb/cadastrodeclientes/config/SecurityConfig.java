@@ -2,7 +2,6 @@ package br.com.jdsb.cadastrodeclientes.config;
 
 import br.com.jdsb.cadastrodeclientes.service.impl.UsuarioServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,13 +19,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-       /*
-        auth.inMemoryAuthentication()
-                .passwordEncoder(passwordEncoder())
-               .withUser("jesse")
-               .password(passwordEncoder().encode("1234"))
-               .roles("USER");
-        */
         auth.userDetailsService(usuarioService)
                 .passwordEncoder(encoder);
     }
@@ -35,10 +27,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                   .antMatchers("/cliente/**")
+                   .antMatchers("/clientes/**")
                 .hasRole("USER")
-                .antMatchers(HttpMethod.POST,"/api/usuario/**")
-                .permitAll()
+                .antMatchers("/api/cliente/**").permitAll()
                 .anyRequest().authenticated()
                 .and().formLogin();
     }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "endereco-api",url = "http://localhost:8765/endereco-api/")
+@FeignClient(name = "endereco-api")
 public interface EnderecoFeign {
 
     @PostMapping(value = "/api/endereco/")

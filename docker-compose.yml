@@ -55,7 +55,24 @@ services:
     environment:
       - EUREKA_URL=http://eureka-server:8761/eureka
     networks:
-      - desafio-zitrus                  
+      - desafio-zitrus
+
+  cadastro-de-cliente:
+    image: jessebezerra/cadastro-de-clientes:1.0.3
+    ports:
+      - "8300:8300"
+    expose: 
+      - "8300" 
+    depends_on:
+      - usuario-api
+      - endereco-api
+      - cliente-api
+      - eureka-server    
+    networks:
+      - desafio-zitrus
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka
+      - PORT=8300                      
   
   mysql_db:
       image: mysql:5.7

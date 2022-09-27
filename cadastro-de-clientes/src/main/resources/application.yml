@@ -1,6 +1,13 @@
+server:
+  port: ${PORT:8300}
 spring:
   thymeleaf:
     cache: false
+    prefix:
+      classpath: /templates/
+    suffix: .html
+  application:
+    name: cadastro-de-clientes
 eureka:
   client:
     service-url:
