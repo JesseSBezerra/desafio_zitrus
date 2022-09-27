@@ -44,10 +44,6 @@ services:
 
   gateway-api:
     image: jessebezerra/gateway-api:1.0.2
-    ports:
-      - "8765:8765"
-    expose: 
-      - "8765" 
     depends_on:
       - eureka-server  
     environment:
@@ -56,7 +52,7 @@ services:
       - desafio-zitrus
 
   cadastro-de-cliente:
-    image: jessebezerra/cadastro-de-clientes:1.0.3
+    image: jessebezerra/cadastro-de-clientes:1.0.4
     ports:
       - "8300:8300"
     expose: 

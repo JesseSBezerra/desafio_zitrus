@@ -36,6 +36,15 @@ public class ClienteController {
         return "cliente/lista";
     }
 
+    @PostMapping("/cep")
+    public String cep(ClienteDTO cliente, BindingResult result, RedirectAttributes attr) {
+        attr.addFlashAttribute("clienteDTO",cliente);
+        if(service.validaCep(cliente,attr)){
+            return "redirect:/clientes/cadastrar";
+        }
+        return "redirect:/clientes/cadastrar";
+    }
+
     @PostMapping("/salvar")
     public String salvar(@Valid ClienteDTO cliente, BindingResult result, RedirectAttributes attr) {
 
