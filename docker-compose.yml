@@ -1,0 +1,76 @@
+version: '3.4'
+
+services:
+  eureka-server:
+    image: jessebezerra/eureka-server:1.0.0
+    ports:
+      - "8761:8761"
+    networks:
+      - desafio-zitrus
+
+  usuario-api:
+    image: jessebezerra/usuario-api:1.1.2
+    depends_on:
+      - mysql_db
+      - eureka-server    
+    networks:
+      - desafio-zitrus
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka
+      - MYSQL_URL=mysql_db:3306 
+      - PORT=8000
+
+  endereco-api:
+    image: jessebezerra/endereco-api:1.1.2
+    depends_on:
+      - mysql_db
+      - eureka-server    
+    networks:
+      - desafio-zitrus
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka
+      - MYSQL_URL=mysql_db:3306 
+      - PORT=8100    
+      
+  cliente-api:
+    image: jessebezerra/cliente-api:1.1.2
+    depends_on:
+      - mysql_db
+      - eureka-server    
+    networks:
+      - desafio-zitrus
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka
+      - MYSQL_URL=mysql_db:3306 
+      - PORT=8200
+
+  gateway-api:
+    image: jessebezerra/gateway-api:1.0.2
+    ports:
+      - "8765:8765"
+    expose: 
+      - "8765" 
+    depends_on:
+      - eureka-server  
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka
+    networks:
+      - desafio-zitrus                  
+  
+  mysql_db:
+      image: mysql:5.7
+      container_name: mysql_db
+      restart: always
+      ports:
+        - "3306:3306" 
+      networks:
+      - desafio-zitrus
+      environment:
+        MYSQL_DATABASE: sales
+        MYSQL_ROOT_PASSWORD: 12345
+
+networks:
+  desafio-zitrus:
+    driver: bridge  
+volumes:
+  dbdata:       

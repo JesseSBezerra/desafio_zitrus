@@ -1,6 +1,8 @@
-package br.com.jdsb.clienteapi.model.dto;
+package br.com.jdsb.cadastrodeclientes.model.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor

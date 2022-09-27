@@ -1,4 +1,4 @@
-package br.com.jdsb.autenticator.resources.config;
+package br.com.jdsb.cadastrodeclientes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
