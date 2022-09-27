@@ -27,28 +27,29 @@ Desafio Tecnológico Zitrus
 #
 #### Esse é um sistema desenvolvido utilizando os conceitos de microserviços abrangindo algumas das boas praticas de mercado.
 #### Tecnologias Utilizadas:
-<li> Spring Boot
-<li> Spring Security
-<li> Spring Cloud
-<li> Spring Eureka
-<li> Spring Gateway
-<li> Spring Open Feing
-<li> Thymeleaf
-<li> Java 11
-<li> JUnit5
-<li> Mockito
-<li> JavaScript
-<li> Mysql
-<li> JQuery
-<li> Bootstrap
-<li> Caelum Stella
-<li> CSS
-<li> HTML
-#
-#### Endpoints
+<li> Spring Boot </li>
+<li> Spring Security </li>
+<li> Spring Cloud </li>
+<li> Spring Eureka </li>
+<li> Spring Gateway </li>
+<li> Spring Open Feing </li>
+<li> Thymeleaf </li>
+<li> Java 11 </li>
+<li> JUnit5 </li>
+<li> Mockito </li>
+<li> JavaScript </li>
+<li> Mysql </li>
+<li> JQuery </li>
+<li> Bootstrap </li>
+<li> Caelum Stella </li>
+<li> CSS </li>
+<li> HTML </li>
+</br>
   OBS: Deixei as portas das apis de usuário,endereco,cliente, eureka e api-gateway ocultas no docker compose apenas deixando a aplicação cadastro de clientes exposta.
   <li> A aplicação roda na porta 8300
   <li> Como solicitado deixei exposta a api de consulta de clientes e endereços, esta roda na seguinte url : http://localhost:8300/api/cliente  
-  
+</br>
+<b>EndPoints</b>
+
 Obs: Após o start do projeto no docker compose demora uns 2 ou 3 minutos para conseguir logar na aplicação
 #
